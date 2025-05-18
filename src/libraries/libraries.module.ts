@@ -5,7 +5,9 @@ import { LibrariesController } from './libraries.controller';
 import { LibrariesService } from './libraries.service';
 
 @Module({
-  providers: [LibrariesService],
-  controllers: [LibrariesController]
+  imports: [TypeOrmModule.forFeature([LibraryEntity, BookEntity])],
+  controllers: [LibrariesController],
+  providers: [LibrariesService, LibraryBookService],
 })
 export class LibrariesModule {}
+
