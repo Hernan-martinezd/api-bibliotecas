@@ -1,23 +1,23 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from 'typeorm';
-import { LibraryEntity } from 'src/libraries/entities/library.entity';
+import { LibraryEntity } from '../../libraries/entities/library.entity';
 
 @Entity('book')
 export class BookEntity {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  title: string;
+  title!: string;
 
   @Column()
-  author: string;
+  author!: string;
 
   @Column()
-  publicationDate: Date;
+  publicationDate!: Date;
 
   @Column()
-  isbn: string;
+  isbn!: string;
 
-  @ManyToMany(() => LibraryEntity, (library) => library.books)
-  libraries: LibraryEntity[];
+  @ManyToMany(() => LibraryEntity, library => library.books)
+  libraries!: LibraryEntity[];
 }

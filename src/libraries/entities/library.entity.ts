@@ -1,27 +1,27 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from 'typeorm';
-import { BookEntity } from 'src/books/entities/book.entity';
+import { BookEntity } from '../../books/entities/book.entity';
 
 @Entity('library')
 export class LibraryEntity {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column()
-  address: string;
+  address!: string;
 
   @Column()
-  city: string;
+  city!: string;
 
   @Column()
-  openHour: string; // formato HH:MM
+  openHour!: string;
 
   @Column()
-  closeHour: string;
+  closeHour!: string;
 
-  @ManyToMany(() => BookEntity, (book) => book.libraries, { cascade: true })
+  @ManyToMany(() => BookEntity, (book: BookEntity) => book.libraries, { cascade: true })
   @JoinTable()
-  books: BookEntity[];
+  books!: BookEntity[];
 }

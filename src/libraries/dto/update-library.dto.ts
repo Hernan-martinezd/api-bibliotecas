@@ -1,4 +1,7 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateLibraryDto } from './create-library.dto';
-
-export class UpdateLibraryDto extends PartialType(CreateLibraryDto) {}
+export class UpdateLibraryDto {
+  name?: string;
+  address?: string;
+  city?: string;
+  openHour?: string;
+  closeHour?: string;
+}
