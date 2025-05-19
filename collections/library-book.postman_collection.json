@@ -1,0 +1,58 @@
+{
+  "info": {
+    "name": "Library-Book Association",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add book to library",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:3000/libraries/{{libraryId}}/books/{{bookId}}"
+        }
+      }
+    },
+    {
+      "name": "Get all books from library",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/libraries/{{libraryId}}/books"
+        }
+      }
+    },
+    {
+      "name": "Get specific book from library",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/libraries/{{libraryId}}/books/{{bookId}}"
+        }
+      }
+    },
+    {
+      "name": "Update books in library",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "[\"{{bookId1}}\", \"{{bookId2}}\"]"
+        },
+        "url": {
+          "raw": "http://localhost:3000/libraries/{{libraryId}}/books"
+        }
+      }
+    },
+    {
+      "name": "Remove book from library",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:3000/libraries/{{libraryId}}/books/{{bookId}}"
+        }
+      }
+    }
+  ]
+}

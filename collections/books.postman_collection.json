@@ -1,0 +1,53 @@
+{
+  "info": {
+    "name": "Books",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all books",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:3000/books" }
+      }
+    },
+    {
+      "name": "Get book by id",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:3000/books/{{bookId}}" }
+      }
+    },
+    {
+      "name": "Create book",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"El coronel no tiene quien le escriba\",\n  \"author\": \"Gabriel García Márquez\",\n  \"publicationDate\": \"2000-05-01\",\n  \"isbn\": \"9789588888888\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/books" }
+      }
+    },
+    {
+      "name": "Update book",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Cien años de soledad\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/books/{{bookId}}" }
+      }
+    },
+    {
+      "name": "Delete book",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "http://localhost:3000/books/{{bookId}}" }
+      }
+    }
+  ]
+}

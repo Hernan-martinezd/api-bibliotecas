@@ -1,0 +1,53 @@
+{
+  "info": {
+    "name": "Libraries",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all libraries",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:3000/libraries" }
+      }
+    },
+    {
+      "name": "Get library by id",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:3000/libraries/{{libraryId}}" }
+      }
+    },
+    {
+      "name": "Create library",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Central\",\n  \"address\": \"Main Street\",\n  \"city\": \"Bogotá\",\n  \"openHour\": \"08:00\",\n  \"closeHour\": \"17:00\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/libraries" }
+      }
+    },
+    {
+      "name": "Update library",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"city\": \"Medellín\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/libraries/{{libraryId}}" }
+      }
+    },
+    {
+      "name": "Delete library",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "http://localhost:3000/libraries/{{libraryId}}" }
+      }
+    }
+  ]
+}
